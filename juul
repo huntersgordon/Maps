@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <title>juulmaps</title>
     <style>
-    
+
     -webkit-appearance: none;
-    
-    form { 
-margin: 0 auto; 
+
+    form {
+margin: 0 auto;
 width:250px;
 }
-    
+
     .button {
     background-color: #00d351; /* Green */
     border: none;
@@ -36,12 +36,12 @@ width:250px;
         padding: 0;
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh5RRm6hszdaLL_xE1tWUWyBK8_PhZ75s"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=(your api key)"></script>
     <script>
-    
- 
-    
-    
+
+
+
+
       // This example creates a custom overlay called USGSOverlay, containing
       // a U.S. Geological Survey (USGS) image of the relevant area on the map.
 
@@ -64,228 +64,228 @@ width:250px;
 
           mapTypeId: 'terrain'
         });
-        
-         
 
-         
+
+
+
 
              var srcImage = 'juulpics/juul10.jpg';
-              
+
                var bounds10 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.0565, -118.4136),  
+              new google.maps.LatLng(34.0565, -118.4136),
               new google.maps.LatLng(34.0565 + 0.007652, -118.4136 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds10, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul11.jpg';
-              
+
                var bounds11 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.2005, -118.5404),  
+              new google.maps.LatLng(34.2005, -118.5404),
               new google.maps.LatLng(34.2005 + 0.007652, -118.5404 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds11, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul12.jpg';
-              
+
                var bounds12 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.1519, -118.6002),  
+              new google.maps.LatLng(34.1519, -118.6002),
               new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds12, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul13.jpg';
-              
+
                var bounds13 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(37.7749, -122.4194),  
+              new google.maps.LatLng(37.7749, -122.4194),
               new google.maps.LatLng(37.7749 + 0.007652, -122.4194 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds13, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul14.jpg';
-              
+
                var bounds14 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(33.9735, -118.2452),  
+              new google.maps.LatLng(33.9735, -118.2452),
               new google.maps.LatLng(33.9735 + 0.007652, -118.2452 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds14, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul15.jpg';
-              
+
                var bounds15 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.1519, -118.6002),  
+              new google.maps.LatLng(34.1519, -118.6002),
               new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds15, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul16.jpg';
-              
+
                var bounds16 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.1463, -118.4293),  
+              new google.maps.LatLng(34.1463, -118.4293),
               new google.maps.LatLng(34.1463 + 0.007652, -118.4293 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds16, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul17.jpg';
-              
+
                var bounds17 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.0544, -118.244),  
+              new google.maps.LatLng(34.0544, -118.244),
               new google.maps.LatLng(34.0544 + 0.007652, -118.244 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds17, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul18.jpg';
-              
+
                var bounds18 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.2034, -118.6922),  
+              new google.maps.LatLng(34.2034, -118.6922),
               new google.maps.LatLng(34.2034 + 0.007652, -118.6922 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds18, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul19.jpg';
-              
+
                var bounds19 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(37.751, -97.822),  
+              new google.maps.LatLng(37.751, -97.822),
               new google.maps.LatLng(37.751 + 0.007652, -97.822 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds19, srcImage, map);
-              
-              
-                
- 
- 
+
+
+
+
+
 
              var srcImage = 'juulpics/juul32.jpg';
-              
+
                var bounds32 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.1519, -118.6002),  
+              new google.maps.LatLng(34.1519, -118.6002),
               new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds32, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul33.jpg';
-              
+
                var bounds33 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.0514, -118.1456),  
+              new google.maps.LatLng(34.0514, -118.1456),
               new google.maps.LatLng(34.0514 + 0.007652, -118.1456 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds33, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul34.jpg';
-              
+
                var bounds34 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(37.6786, -122.4764),  
+              new google.maps.LatLng(37.6786, -122.4764),
               new google.maps.LatLng(37.6786 + 0.007652, -122.4764 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds34, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul35.jpg';
-              
+
                var bounds35 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(40.0402, -75.5332),  
+              new google.maps.LatLng(40.0402, -75.5332),
               new google.maps.LatLng(40.0402 + 0.007652, -75.5332 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds35, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul36.jpg';
-              
+
                var bounds36 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.1519, -118.6002),  
+              new google.maps.LatLng(34.1519, -118.6002),
               new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds36, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul37.jpg';
-              
+
                var bounds37 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(43.6319, -79.3716),  
+              new google.maps.LatLng(43.6319, -79.3716),
               new google.maps.LatLng(43.6319 + 0.007652, -79.3716 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds37, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul38.jpg';
-              
+
                var bounds38 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.2287, -118.4441),  
+              new google.maps.LatLng(34.2287, -118.4441),
               new google.maps.LatLng(34.2287 + 0.007652, -118.4441 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds38, srcImage, map);
-              
-              
-                
- 
+
+
+
+
 
              var srcImage = 'juulpics/juul39.jpg';
-              
+
                var bounds39 = new google.maps.LatLngBounds(
-              new google.maps.LatLng(34.2395, -116.8685),  
+              new google.maps.LatLng(34.2395, -116.8685),
               new google.maps.LatLng(34.2395 + 0.007652, -116.8685 + 0.0101524));
-              
+
                overlay = new USGSOverlay(bounds39, srcImage, map);
-              
-              
-                
-   
-    
+
+
+
+
+
 
       }
 
@@ -296,7 +296,7 @@ width:250px;
         this.bounds_ = bounds;
         this.image_ = image;
         this.map_ = map;
-       
+
         // Define a property to hold the image's div. We'll
         // actually create this div upon receipt of the onAdd()
         // method so we'll leave it null for now.
@@ -362,30 +362,30 @@ width:250px;
       };
 
       google.maps.event.addDomListener(window, 'load', initMap);
-      
- 
-      
-      
+
+
+
+
     </script>
   </head>
   <body>
     <div id="map"></div>
-    
+
     <img style = "position:absolute; right:0%; width:120px;" src = "juulmaps.png">
-    
+
 
 
     <form action="test.php" method="post" enctype="multipart/form-data" style = "font-color:white; color:white;margin:0 auto;text-align: left;">
-    
-    <input style = "height: 20px;text-align: left; margin: auto;" type="file" class="hidden" value = "meow" name="fileToUpload" id="fileToUpload"/>  
-    
-    
+
+    <input style = "height: 20px;text-align: left; margin: auto;" type="file" class="hidden" value = "meow" name="fileToUpload" id="fileToUpload"/>
+
+
     <input style = "position: absolute; left:0%; top:94%; margin:0 auto;text-align: left;cursor:pointer;" class = "button" type="submit" value="send it" name="submit">
-  
+
 </form>
 
-    
-    
+
+
   </body>
 
 </html>
