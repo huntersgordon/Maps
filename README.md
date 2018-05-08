@@ -1,7 +1,7 @@
 # JuulMaps
 A Map-based social network for people who use the Juul Vape.
 
-[calhat.com/juul](calhat.com/juul)
+[calhat.com/juul](http://www.calhat.com/juul)
 
 # Add your Google Maps API key on line `38` of the file called `juul`.
 
