@@ -1,5 +1,5 @@
-# JuulMaps
-A Map-based social network for people who use the Juul Vape.
+# Maps
+A Map-based social network.
 
 [calhat.com/juul](http://www.calhat.com/juul)
 
