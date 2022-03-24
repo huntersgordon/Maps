@@ -1,5 +1,5 @@
 <html>
-    <title>juulmaps</title>
+    <title>main</title>
     <style>
    
     
@@ -37,7 +37,7 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 
 $boundsnumber = intval(file_get_contents("startercounter"));
 if ($boundsnumber > 150){
-    echo "too many juuls!<br><a style = 'text-decoration: none; color:white;' href = 'juul'><br><div style = 'cursor:pointer;' class = 'button'>Go Back</div'></a>";
+    echo "too many juuls!<br><a style = 'text-decoration: none; color:white;' href = 'main'><br><div style = 'cursor:pointer;' class = 'button'>Go Back</div'></a>";
     exit();
 
     
