@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>maps</title>
+    <style>
+
+    -webkit-appearance: none;
+
+    form {
+margin: 0 auto;
+width:250px;
+}
+
+    .button {
+    background-color: #00d351; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 90%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        background-color: #4CAF50;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh5RRm6hszdaLL_xE1tWUWyBK8_PhZ75s"></script>
+    <script>
+
+
+
+
+      // This example creates a custom overlay called USGSOverlay, containing
+      // a U.S. Geological Survey (USGS) image of the relevant area on the map.
+
+      // Set the custom overlay object's prototype to a new instance
+      // of OverlayView. In effect, this will subclass the overlay class therefore
+      // it's simpler to load the API synchronously, using
+      // google.maps.event.addDomListener().
+      // Note that we set the prototype to an instance, rather than the
+      // parent class itself, because we do not wish to modify the parent class.
+
+      var overlay;
+      USGSOverlay.prototype = new google.maps.OverlayView();
+
+      // Initialize the map and the custom overlay.
+
+
+
+          function initMap() {
+
+
+        var looti = window.location.href;
+        if (looti.includes("lati") && looti.includes("longi") && looti.includes("zoom")){
+        var zoomi = parseInt(looti.substring(looti.search("zoom") + 5))
+        var booti= parseFloat(looti.substring(looti.search("lati")+5,looti.search("longi")-1));
+        var loongi = parseFloat(looti.substring(looti.search("longi")+6));
+       // alert(loongi);
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: zoomi,
+          center: {
+          //lat: 40.1522,
+         // lng: -97.5437},
+         lat:booti,lng:loongi},
+
+          mapTypeId: 'terrain'
+        });
+
+
+        }else{
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {
+          lat: 40.1522,
+          lng: -97.5437},
+
+          mapTypeId: 'terrain'
+        });
+
+        }

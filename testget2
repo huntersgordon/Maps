@@ -1,0 +1,109 @@
+<!Doctype html>
+<html>
+	<head> 
+	    <link rel = "stylesheet" type = "text/css" href = "assets/CSS/testget.css"> 
+	    <link rel = "stylesheet" type = "text/css" href = "mystyle.css">
+	</head>
+	<body>
+		<img src = "beautiful8.jpg" id = "backgroundImage">
+		<div class = "title" style = "font-family:Edwardian;">slughat</div> 
+		<form action = "assets/PHP/testget.php" class = "formContainer" onsubmit = "return validateMyForm();">
+			<div class = "label" style = "margin:20px; margin-left:0; margin-top:0;"><u>Personal Information</u></div>
+			<div class = "queryPackage">
+				<div class = "label">Name</div>
+				<input class = "name" type = "text" name = "name" placeholder = "Sluggy mcSlugger" onchange = "onChange(this)"><br>
+			</div>
+			<div class = "queryPackage">
+				<div class = "label">Mobile Number</div>
+				<input name = "mobile" class = "mobile" type = "text" placeholder = "(420)-666-6969" onchange = "onChange(this)"><br>
+			</div>
+			<!--
+			<div class = "queryPackage">
+				<div class = "label">Address</div>
+				<input name = "address1" class = "address1" type = "text" placeholder = "8008 Calhat Ave." onchange = "onChange(this)">
+			</div>
+			<div class = "queryPackage">
+				<div class = "label">Address Line 2</div>
+				<input name = "address2" class = "address2" type = "text" placeholder = "Unit 1, Putnasty, Room 106" onchange = "onChange(this)">
+			</div>
+			<div class = "queryPackage">
+				<div class = "label">City</div>
+				<input name = "city" class = "city" type = "text" placeholder = "Berkeley" onchange = "onChange(this)">
+			</div>
+			<div class = "queryPackage">
+				<div class = "label">State</div>
+				<input name = "state" class = "state" type = "text" placeholder = "CA" onchange = "onChange(this)">
+			</div>
+			-->
+			<div class = "queryPackage">
+			     <div class = "label">College</div> 
+			    <br>
+			    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+			    <select class = "college" name="college" onchange = "onChange(this)">
+                    <option value="none"> </option>
+                    <option value="Cowell">Cowell</option>
+                    <option value="College-Nine">College Nine</option>
+                    <option value="College-Ten">College Ten</option>
+                    <option value="Crown">Crown</option>
+                    <option value="Kresge">Kresge</option>
+                    <option value="Merill">Merrill</option>
+                    <option value="Oakes">Oakes</option>
+                    <option value="Porter">Porter</option>
+                    <option value="Rachel-Carson">Rachel Carson</option>
+                    <option value="Stevenson">Stevenson</option>
+             </select></meta>
+             </div>
+             <!--
+			<div class = "queryPackage">
+				<div class = "label">College</div>
+				<input name = "college" class = "college" type = "text" placeholder = "Stevenson" onchange = "onChange(this)">
+			</div>
+			-->
+			<div class = "queryPackage">
+				<div class = "label">Building</div>
+				<input name = "building" class = "building" type = "text" placeholder = "1" onchange = "onChange(this)">
+			</div>
+			<div class = "queryPackage">
+				<div class = "label">Room Number</div>
+				<input name = "roomNum" class = "roomNum" type = "text" placeholder = "1" onchange = "onChange(this)">
+			</div>
+			<div class = "label" style = "margin:20px; margin-left:0;"><u>Order Details</u></div>
+			<div class = "queryPackage">
+				<div class = "label">Delivery Date</div>
+				<input name = "date" class = "date" type = "text" placeholder = "04/20/8008" onchange = "onChange(this)">
+			</div>
+			<div class = "queryPackage">
+				<div class = "label">Delivery Time</div>
+				<div class = "choicesBox">
+					<div class = "butt time">3-4</div>
+					<div class = "butt time">4-5</div>
+					<div class = "butt time">5-6</div>
+					<div class = "butt time">6-7</div>
+					<div class = "butt time">7-8</div>
+					<div class = "butt time">8-9</div>
+					<div class = "butt time">9-10</div>
+				</div>
+			</div>
+			<input style = "display:none;" name = "time" class = "hiddenTime" type = "text">
+			<div class = "queryPackage">
+				<div class = "label" style = "clear:left">Color</div>
+				<div class = "choicesBox">
+					<div class = "butt color" style = "background-color:pink; clear:left;"></div>
+					<div class = "butt color" style = "background-color:white;"></div>
+					<div class = "butt color" style = "background-color:navy;"></div>
+				</div>
+			</div>
+			<input style = "display:none;" name = "color" class = "hiddenColor" type = "text">
+			<div class = "queryPackage">
+				<div class = "label" style = "clear:left;">Quantity</div>
+				<input name = "quantity" class = "quantity" type = "tel" placeholder = "2" onchange = "onChange(this)">
+			</div>
+			<div class = "submit">
+				<input type = submit class = "submitButt">
+				<div class = "price"></div>
+			</div>
+		</form>
+	</body>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="assets/JS/testget.js"></script>
+</html>

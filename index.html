@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>maps</title>
+    <style>
+
+    -webkit-appearance: none;
+
+    form {
+margin: 0 auto;
+width:250px;
+}
+
+    .button {
+    background-color: #00d351; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 90%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        background-color: #4CAF50;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh5RRm6hszdaLL_xE1tWUWyBK8_PhZ75s"></script>
+    <script>
+
+
+
+
+      // This example creates a custom overlay called USGSOverlay, containing
+      // a U.S. Geological Survey (USGS) image of the relevant area on the map.
+
+      // Set the custom overlay object's prototype to a new instance
+      // of OverlayView. In effect, this will subclass the overlay class therefore
+      // it's simpler to load the API synchronously, using
+      // google.maps.event.addDomListener().
+      // Note that we set the prototype to an instance, rather than the
+      // parent class itself, because we do not wish to modify the parent class.
+
+      var overlay;
+      USGSOverlay.prototype = new google.maps.OverlayView();
+
+      // Initialize the map and the custom overlay.
+
+
+
+          function initMap() {
+
+
+        var looti = window.location.href;
+        if (looti.includes("lati") && looti.includes("longi") && looti.includes("zoom")){
+        var zoomi = parseInt(looti.substring(looti.search("zoom") + 5))
+        var booti= parseFloat(looti.substring(looti.search("lati")+5,looti.search("longi")-1));
+        var loongi = parseFloat(looti.substring(looti.search("longi")+6));
+       // alert(loongi);
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: zoomi,
+          center: {
+          //lat: 40.1522,
+         // lng: -97.5437},
+         lat:booti,lng:loongi},
+
+          mapTypeId: 'terrain'
+        });
+
+
+        }else{
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {
+          lat: 40.1522,
+          lng: -97.5437},
+
+          mapTypeId: 'terrain'
+        });
+
+        }
+
+
+
+
+
+             var srcImage = 'picture_folder/pic10.jpg';
+
+               var bounds10 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.0565, -118.4136),
+              new google.maps.LatLng(34.0565 + 0.007652, -118.4136 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds10, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic11.jpg';
+
+               var bounds11 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.2005, -118.5404),
+              new google.maps.LatLng(34.2005 + 0.007652, -118.5404 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds11, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic13.jpg';
+
+               var bounds13 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.7749, -122.4194),
+              new google.maps.LatLng(37.7749 + 0.007652, -122.4194 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds13, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic14.jpg';
+
+               var bounds14 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(33.9735, -118.2452),
+              new google.maps.LatLng(33.9735 + 0.007652, -118.2452 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds14, srcImage, map);
+
+
+
+
+
+
+
+
+
+
+             var srcImage = 'picture_folder/pic16.jpg';
+
+               var bounds16 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1463, -118.4293),
+              new google.maps.LatLng(34.1463 + 0.007652, -118.4293 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds16, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic17.jpg';
+
+               var bounds17 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.0544, -118.244),
+              new google.maps.LatLng(34.0544 + 0.007652, -118.244 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds17, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic18.jpg';
+
+               var bounds18 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.2034, -118.6922),
+              new google.maps.LatLng(34.2034 + 0.007652, -118.6922 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds18, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic19.jpg';
+
+               var bounds19 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.751, -97.822),
+              new google.maps.LatLng(37.751 + 0.007652, -97.822 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds19, srcImage, map);
+
+
+
+
+
+
+
+
+
+
+             var srcImage = 'picture_folder/pic33.jpg';
+
+               var bounds33 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.0514, -118.1456),
+              new google.maps.LatLng(34.0514 + 0.007652, -118.1456 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds33, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic34.jpg';
+
+               var bounds34 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.6786, -122.4764),
+              new google.maps.LatLng(37.6786 + 0.007652, -122.4764 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds34, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic35.jpg';
+
+               var bounds35 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(40.0402, -75.5332),
+              new google.maps.LatLng(40.0402 + 0.007652, -75.5332 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds35, srcImage, map);
+
+
+
+
+
+
+
+             var srcImage = 'picture_folder/pic37.jpg';
+
+               var bounds37 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(43.6319, -79.3716),
+              new google.maps.LatLng(43.6319 + 0.007652, -79.3716 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds37, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic38.jpg';
+
+               var bounds38 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.2287, -118.4441),
+              new google.maps.LatLng(34.2287 + 0.007652, -118.4441 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds38, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic39.jpg';
+
+               var bounds39 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.2395, -116.8685),
+              new google.maps.LatLng(34.2395 + 0.007652, -116.8685 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds39, srcImage, map);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             var srcImage = 'picture_folder/pic105.jpg';
+
+               var bounds105 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds105, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic106.jpg';
+
+               var bounds106 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds106, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic107.jpg';
+
+               var bounds107 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds107, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic108.jpg';
+
+               var bounds108 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(33.9735, -118.2452),
+              new google.maps.LatLng(33.9735 + 0.007652, -118.2452 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds108, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic109.jpg';
+
+               var bounds109 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds109, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic110.jpg';
+
+               var bounds110 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds110, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic111.jpg';
+
+               var bounds111 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds111, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic112.jpg';
+
+               var bounds112 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1463, -118.4293),
+              new google.maps.LatLng(34.1463 + 0.007652, -118.4293 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds112, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic113.jpg';
+
+               var bounds113 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1463, -118.4293),
+              new google.maps.LatLng(34.1463 + 0.007652, -118.4293 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds113, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic114.jpg';
+
+               var bounds114 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(41.1569, -85.0556),
+              new google.maps.LatLng(41.1569 + 0.007652, -85.0556 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds114, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic115.jpg';
+
+               var bounds115 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds115, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic116.jpg';
+
+               var bounds116 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds116, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic117.jpg';
+
+               var bounds117 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(26.5253, -80.0664),
+              new google.maps.LatLng(26.5253 + 0.007652, -80.0664 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds117, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic118.jpg';
+
+               var bounds118 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(32.884, -85.8265),
+              new google.maps.LatLng(32.884 + 0.007652, -85.8265 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds118, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic119.jpg';
+
+               var bounds119 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.751, -97.822),
+              new google.maps.LatLng(37.751 + 0.007652, -97.822 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds119, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic120.jpg';
+
+               var bounds120 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(40.8331, -74.2427),
+              new google.maps.LatLng(40.8331 + 0.007652, -74.2427 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds120, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic121.jpg';
+
+               var bounds121 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(35.7125, -88.7021),
+              new google.maps.LatLng(35.7125 + 0.007652, -88.7021 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds121, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic122.jpg';
+
+               var bounds122 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(35.6507, -78.4564),
+              new google.maps.LatLng(35.6507 + 0.007652, -78.4564 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds122, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic123.jpg';
+
+               var bounds123 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(35.6507, -78.4564),
+              new google.maps.LatLng(35.6507 + 0.007652, -78.4564 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds123, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic124.jpg';
+
+               var bounds124 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(35.6507, -78.4564),
+              new google.maps.LatLng(35.6507 + 0.007652, -78.4564 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds124, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic125.jpg';
+
+               var bounds125 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(35.6507, -78.4564),
+              new google.maps.LatLng(35.6507 + 0.007652, -78.4564 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds125, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic126.jpg';
+
+               var bounds126 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(40.8549, -74.2859),
+              new google.maps.LatLng(40.8549 + 0.007652, -74.2859 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds126, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic127.jpg';
+
+               var bounds127 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.0544, -118.244),
+              new google.maps.LatLng(34.0544 + 0.007652, -118.244 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds127, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic128.jpg';
+
+               var bounds128 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(33.8449, -117.7391),
+              new google.maps.LatLng(33.8449 + 0.007652, -117.7391 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds128, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic129.jpg';
+
+               var bounds129 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.2005, -118.5404),
+              new google.maps.LatLng(34.2005 + 0.007652, -118.5404 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds129, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic130.jpg';
+
+               var bounds130 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(40.7637, -73.7725),
+              new google.maps.LatLng(40.7637 + 0.007652, -73.7725 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds130, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic131.jpg';
+
+               var bounds131 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(40.7637, -73.7725),
+              new google.maps.LatLng(40.7637 + 0.007652, -73.7725 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds131, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic132.jpg';
+
+               var bounds132 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(38.9109, -76.5403),
+              new google.maps.LatLng(38.9109 + 0.007652, -76.5403 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds132, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic133.jpg';
+
+               var bounds133 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(43.148, -87.9208),
+              new google.maps.LatLng(43.148 + 0.007652, -87.9208 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds133, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic134.jpg';
+
+               var bounds134 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1431, -117.616),
+              new google.maps.LatLng(34.1431 + 0.007652, -117.616 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds134, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic135.jpg';
+
+               var bounds135 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(28.0288, -82.7689),
+              new google.maps.LatLng(28.0288 + 0.007652, -82.7689 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds135, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic136.jpg';
+
+               var bounds136 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.2034, -118.6922),
+              new google.maps.LatLng(34.2034 + 0.007652, -118.6922 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds136, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic137.jpg';
+
+               var bounds137 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(42.1861, -72.5255),
+              new google.maps.LatLng(42.1861 + 0.007652, -72.5255 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds137, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic138.jpg';
+
+               var bounds138 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.0544, -118.244),
+              new google.maps.LatLng(34.0544 + 0.007652, -118.244 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds138, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic139.jpg';
+
+               var bounds139 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(32.7787, -96.8218),
+              new google.maps.LatLng(32.7787 + 0.007652, -96.8218 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds139, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic140.jpg';
+
+               var bounds140 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(42.0855, -87.8248),
+              new google.maps.LatLng(42.0855 + 0.007652, -87.8248 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds140, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic141.jpg';
+
+               var bounds141 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds141, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic142.jpg';
+
+               var bounds142 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(40.4978, -79.8323),
+              new google.maps.LatLng(40.4978 + 0.007652, -79.8323 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds142, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic143.jpg';
+
+               var bounds143 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(38.5816, -121.4944),
+              new google.maps.LatLng(38.5816 + 0.007652, -121.4944 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds143, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic144.jpg';
+
+               var bounds144 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(38.5816, -121.4944),
+              new google.maps.LatLng(38.5816 + 0.007652, -121.4944 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds144, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic145.jpg';
+
+               var bounds145 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(43.6135, -116.2035),
+              new google.maps.LatLng(43.6135 + 0.007652, -116.2035 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds145, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic146.jpg';
+
+               var bounds146 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(43.6135, -116.2035),
+              new google.maps.LatLng(43.6135 + 0.007652, -116.2035 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds146, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic147.jpg';
+
+               var bounds147 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8668, -122.2536),
+              new google.maps.LatLng(37.8668 + 0.007652, -122.2536 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds147, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic148.jpg';
+
+               var bounds148 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.6393, -122.0442),
+              new google.maps.LatLng(37.6393 + 0.007652, -122.0442 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds148, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic149.jpg';
+
+               var bounds149 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(39.3338, -120.249),
+              new google.maps.LatLng(39.3338 + 0.007652, -120.249 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds149, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic150.jpg';
+
+               var bounds150 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(39.3338, -120.249),
+              new google.maps.LatLng(39.3338 + 0.007652, -120.249 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds150, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic151.jpg';
+
+               var bounds151 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.9181, -122.0735),
+              new google.maps.LatLng(37.9181 + 0.007652, -122.0735 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds151, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic152.jpg';
+
+               var bounds152 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(40.4652, -74.2307),
+              new google.maps.LatLng(40.4652 + 0.007652, -74.2307 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds152, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic153.jpg';
+
+               var bounds153 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(38.5816, -121.4944),
+              new google.maps.LatLng(38.5816 + 0.007652, -121.4944 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds153, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic154.jpg';
+
+               var bounds154 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.751, -97.822),
+              new google.maps.LatLng(37.751 + 0.007652, -97.822 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds154, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic155.jpg';
+
+               var bounds155 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(34.1519, -118.6002),
+              new google.maps.LatLng(34.1519 + 0.007652, -118.6002 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds155, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic156.jpg';
+
+               var bounds156 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(38.9358, -77.1621),
+              new google.maps.LatLng(38.9358 + 0.007652, -77.1621 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds156, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic157.jpg';
+
+               var bounds157 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(39.0481, -77.4729),
+              new google.maps.LatLng(39.0481 + 0.007652, -77.4729 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds157, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic158.jpg';
+
+               var bounds158 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(39.0481, -77.4729),
+              new google.maps.LatLng(39.0481 + 0.007652, -77.4729 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds158, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic159.jpg';
+
+               var bounds159 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(39.0853, -77.6452),
+              new google.maps.LatLng(39.0853 + 0.007652, -77.6452 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds159, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic160.jpg';
+
+               var bounds160 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(39.0853, -77.6452),
+              new google.maps.LatLng(39.0853 + 0.007652, -77.6452 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds160, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic161.jpg';
+
+               var bounds161 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8668, -122.2536),
+              new google.maps.LatLng(37.8668 + 0.007652, -122.2536 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds161, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic162.jpg';
+
+               var bounds162 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8668, -122.2536),
+              new google.maps.LatLng(37.8668 + 0.007652, -122.2536 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds162, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic163.jpg';
+
+               var bounds163 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8668, -122.2536),
+              new google.maps.LatLng(37.8668 + 0.007652, -122.2536 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds163, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic164.jpg';
+
+               var bounds164 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.918, -122.3032),
+              new google.maps.LatLng(37.918 + 0.007652, -122.3032 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds164, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic165.jpg';
+
+               var bounds165 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8784, -122.2603),
+              new google.maps.LatLng(37.8784 + 0.007652, -122.2603 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds165, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic166.jpg';
+
+               var bounds166 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8784, -122.2603),
+              new google.maps.LatLng(37.8784 + 0.007652, -122.2603 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds166, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic167.jpg';
+
+               var bounds167 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8784, -122.2603),
+              new google.maps.LatLng(37.8784 + 0.007652, -122.2603 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds167, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic168.jpg';
+
+               var bounds168 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8784, -122.2603),
+              new google.maps.LatLng(37.8784 + 0.007652, -122.2603 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds168, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic169.jpg';
+
+               var bounds169 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8784, -122.2603),
+              new google.maps.LatLng(37.8784 + 0.007652, -122.2603 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds169, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic170.jpg';
+
+               var bounds170 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.751, -97.822),
+              new google.maps.LatLng(37.751 + 0.007652, -97.822 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds170, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic170.jpg';
+
+               var bounds170 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.751, -97.822),
+              new google.maps.LatLng(37.751 + 0.007652, -97.822 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds170, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic171.jpg';
+
+               var bounds171 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.751, -97.822),
+              new google.maps.LatLng(37.751 + 0.007652, -97.822 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds171, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic171.jpg';
+
+               var bounds171 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.751, -97.822),
+              new google.maps.LatLng(37.751 + 0.007652, -97.822 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds171, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic172.jpg';
+
+               var bounds172 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.918, -122.3032),
+              new google.maps.LatLng(37.918 + 0.007652, -122.3032 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds172, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic173.jpg';
+
+               var bounds173 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8784, -122.2603),
+              new google.maps.LatLng(37.8784 + 0.007652, -122.2603 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds173, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic174.jpg';
+
+               var bounds174 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8784, -122.2603),
+              new google.maps.LatLng(37.8784 + 0.007652, -122.2603 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds174, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic175.jpg';
+
+               var bounds175 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.918, -122.3032),
+              new google.maps.LatLng(37.918 + 0.007652, -122.3032 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds175, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic176.jpg';
+
+               var bounds176 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.918, -122.3032),
+              new google.maps.LatLng(37.918 + 0.007652, -122.3032 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds176, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic177.jpg';
+
+               var bounds177 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.918, -122.3032),
+              new google.maps.LatLng(37.918 + 0.007652, -122.3032 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds177, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic178.jpg';
+
+               var bounds178 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.918, -122.3032),
+              new google.maps.LatLng(37.918 + 0.007652, -122.3032 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds178, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic179.jpg';
+
+               var bounds179 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(39.0481, -77.4729),
+              new google.maps.LatLng(39.0481 + 0.007652, -77.4729 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds179, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic180.jpg';
+
+               var bounds180 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8668, -122.2536),
+              new google.maps.LatLng(37.8668 + 0.007652, -122.2536 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds180, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic181.jpg';
+
+               var bounds181 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(39.0481, -77.4729),
+              new google.maps.LatLng(39.0481 + 0.007652, -77.4729 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds181, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic182.jpg';
+
+               var bounds182 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8699, -122.071),
+              new google.maps.LatLng(37.8699 + 0.007652, -122.071 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds182, srcImage, map);
+
+
+
+
+
+             var srcImage = 'picture_folder/pic183.jpg';
+
+               var bounds183 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(37.8699, -122.071),
+              new google.maps.LatLng(37.8699 + 0.007652, -122.071 + 0.0101524));
+
+               overlay = new USGSOverlay(bounds183, srcImage, map);
+
+
+
+
+
+
+
+
+
+             var srcImage = 'picture_folder/pic242.jpg';
+
+               var bounds242 = new google.maps.LatLngBounds(
+              new google.maps.LatLng(0, 0),
+              new google.maps.LatLng( + 0.007652,  + 0.0101524));
+
+               overlay = new USGSOverlay(bounds242, srcImage, map);
+
+
+
+
+
+
+      }
+
+      /** @constructor */
+      function USGSOverlay(bounds, image, map) {
+
+        // Initialize all properties.
+        this.bounds_ = bounds;
+        this.image_ = image;
+        this.map_ = map;
+
+        // Define a property to hold the image's div. We'll
+        // actually create this div upon receipt of the onAdd()
+        // method so we'll leave it null for now.
+        this.div_ = null;
+
+        // Explicitly call setMap on this overlay.
+        this.setMap(map);
+      }
+
+      /**
+       * onAdd is called when the map's panes are ready and the overlay has been
+       * added to the map.
+       */
+      USGSOverlay.prototype.onAdd = function() {
+
+        var div = document.createElement('div');
+        div.style.borderStyle = 'solid';
+        div.style.borderWidth = '3px';
+        div.style.position = 'absolute';
+        div.style.borderColor = "red";
+
+        // Create the img element and attach it to the div.
+        var img = document.createElement('img');
+        img.src = this.image_;
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.position = 'absolute';
+        div.appendChild(img);
+
+        this.div_ = div;
+
+        // Add the element to the "overlayLayer" pane.
+        var panes = this.getPanes();
+        panes.overlayLayer.appendChild(div);
+      };
+
+      USGSOverlay.prototype.draw = function() {
+
+        // We use the south-west and north-east
+        // coordinates of the overlay to peg it to the correct position and size.
+        // To do this, we need to retrieve the projection from the overlay.
+        var overlayProjection = this.getProjection();
+
+        // Retrieve the south-west and north-east coordinates of this overlay
+        // in LatLngs and convert them to pixel coordinates.
+        // We'll use these coordinates to resize the div.
+        var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
+        var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
+
+        // Resize the image's div to fit the indicated dimensions.
+        var div = this.div_;
+        div.style.left = sw.x + 'px';
+        div.style.top = ne.y + 'px';
+        div.style.width = (ne.x - sw.x) + 'px';
+        div.style.height = (sw.y - ne.y) + 'px';
+      };
+
+      // The onRemove() method will be called automatically from the API if
+      // we ever set the overlay's map property to 'null'.
+      USGSOverlay.prototype.onRemove = function() {
+        this.div_.parentNode.removeChild(this.div_);
+        this.div_ = null;
+      };
+
+      google.maps.event.addDomListener(window, 'load', initMap);
+
+
+
+
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <img style = "position:absolute; right:0%; width:120px;" src = "logo.png">
+
+
+
+    <form action="test.php" method="post" enctype="multipart/form-data" style = "font-color:white; color:white;margin:0 auto;text-align: left;">
+
+    <input style = "height: 20px;text-align: left; margin: auto;" type="file" class="hidden" value = "meow" name="fileToUpload" id="fileToUpload"/>
+
+
+    <input style = "position: absolute; left:0%; top:94%; margin:0 auto;text-align: left;cursor:pointer;" class = "button" type="submit" value="send it" name="submit">
+
+</form>
+
+
+
+  </body>
+
+</html>
